@@ -5,7 +5,7 @@ export default function AdminOrders() {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/orders")
+    fetch("https://backend-crackers.onrender.com/api/orders")
       .then(res => res.json())
       .then(data => setOrders(data));
   }, []);

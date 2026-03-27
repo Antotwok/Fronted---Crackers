@@ -12,7 +12,7 @@ export default function NewArrivals() {
     const fetchNewArrivals = async () => {
       try {
         const res = await fetch(
-          "http://localhost:5000/api/products/new-arrivals"
+          "https://backend-crackers.onrender.com/api/products/new-arrivals"
         );
 
         const data = await res.json();

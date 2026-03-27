@@ -13,7 +13,7 @@ export default function Cart() {
         setLoading(false);
         return;
       }const res = await fetch(
-        `http://localhost:5000/api/cart/${user.id}`
+        `https://backend-crackers.onrender.com/api/cart/${user.id}`
       );
       const data = await res.json();
       console.log("CART DATA:", data);

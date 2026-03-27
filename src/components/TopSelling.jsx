@@ -10,7 +10,7 @@ export default function TopSelling() {
     const fetchTopSelling = async () => {
       try {
         const res = await fetch(
-          "http://localhost:5000/api/products/top-selling"
+          "https://backend-crackers.onrender.com/api/products/top-selling"
         );
 
         const data = await res.json();

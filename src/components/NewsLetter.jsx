@@ -6,7 +6,7 @@ export default function NewsLetter() {
   const subscribe = async () => {
     try {
       const res = await fetch(
-        "http://localhost:5000/api/newsletter/subscribe",
+        "https://backend-crackers.onrender.com/api/newsletter/subscribe",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
