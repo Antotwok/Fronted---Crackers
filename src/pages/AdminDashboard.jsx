@@ -105,8 +105,8 @@ export default function AdminDashboard() {
       const token = localStorage.getItem("token");
 
       const url = editingId
-        ? `http://localhost:5000/api/products/${editingId}`
-        : "http://localhost:5000/api/products";
+        ? `https://backend-crackers.onrender.com/api/products/${editingId}`
+        : "https://backend-crackers.onrender.com/api/products";
 
       const method = editingId ? "PUT" : "POST";
 
@@ -153,7 +153,7 @@ export default function AdminDashboard() {
       const token = localStorage.getItem("token");
 
       const res = await fetch(
-        `http://localhost:5000/api/products/${id}`,
+        `https://backend-crackers.onrender.com/api/products/${id}`,
         {
           method: "DELETE",
           headers: {

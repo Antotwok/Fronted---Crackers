@@ -30,7 +30,7 @@ export default function Cart() {
   }, [loadCart]);
   const removeItem = async (cartId) => {
     try {
-      await fetch(`http://localhost:5000/api/cart/${cartId}`, {
+      await fetch(`https://backend-crackers.onrender.com/api/cart/${cartId}`, {
         method: "DELETE"
       });
       setCart(prev => prev.filter(item => item._id !== cartId));
@@ -41,7 +41,7 @@ export default function Cart() {
   };
   const updateQty = async (cartId, newQty) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/cart/${cartId}`, {
+      const res = await fetch(`https://backend-crackers.onrender.com/api/cart/${cartId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ qty: newQty })});
@@ -68,7 +68,7 @@ const user = JSON.parse(localStorage.getItem("user"));
 const upiUrl = `upi://pay?pa=${UPI_ID}&pn=${MERCHANT_NAME}&am=${total}&cu=INR`;
 window.location.href = upiUrl;
 try {
-  await fetch("http://localhost:5000/api/orders", {method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ userId: user?.id || "guest", products: cart, total, paymentMethod: "UPI"})});
+  await fetch("https://backend-crackers.onrender.com/api/orders", {method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ userId: user?.id || "guest", products: cart, total, paymentMethod: "UPI"})});
   setTimeout(() => {alert("Payment successful & order placed!");setCart([]); navigate("/add-review");}, 2000);} catch (err) { console.error("Order error:", err);alert("Order failed. Try again.");
   }
 };

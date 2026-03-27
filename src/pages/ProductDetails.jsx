@@ -48,7 +48,7 @@ const handleAddToCart = async () => {
       return;
     }
 
-    const res = await fetch("http://localhost:5000/api/cart/add", {
+    const res = await fetch("https://backend-crackers.onrender.com/api/cart/add", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
